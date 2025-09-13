@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become a Driver - CampusRide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#1e40af',
+                        accent: '#3b82f6'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <!-- Navigation Header -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-primary">CampusRide</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Home</a>
+                        <a href="about.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">About</a>
+                        <a href="request.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Request Ride</a>
+                        <a href="register.html" class="nav-link text-primary px-3 py-2 rounded-md text-sm font-medium">Become Driver</a>
+                        <a href="rides.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Available Rides</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary focus:outline-none focus:text-primary">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg">
+                <a href="index.html" class="nav-link block text-gray-700 hover:text-primary px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="about.html" class="nav-link block text-gray-700 hover:text-primary px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="request.html" class="nav-link block text-gray-700 hover:text-primary px-3 py-2 rounded-md text-base font-medium">Request Ride</a>
+                <a href="register.html" class="nav-link block text-primary px-3 py-2 rounded-md text-base font-medium">Become Driver</a>
+                <a href="rides.html" class="nav-link block text-gray-700 hover:text-primary px-3 py-2 rounded-md text-base font-medium">Available Rides</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-20 pb-16 bg-gradient-to-r from-primary to-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl sm:text-5xl font-bold text-white mb-6">Become a Driver</h1>
+            <p class="text-xl text-blue-100 max-w-3xl mx-auto">Join our community of student drivers and earn money while helping fellow students get around campus safely.</p>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Why Drive with CampusRide?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Earn Extra Money</h3>
+                    <p class="text-gray-600">Make money during your commute by sharing rides with fellow students.</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Meet New People</h3>
+                    <p class="text-gray-600">Connect with students from your university and build lasting friendships.</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Flexible Schedule</h3>
+                    <p class="text-gray-600">Drive when it's convenient for you. Perfect for fitting around your class schedule.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">Driver Registration Form</h2>
+                <form id="driver-registration-form" class="space-y-6">
+                    <!-- Personal Information -->
+                    <div class="border-b border-gray-200 pb-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Personal Information</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="first-name" class="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
+                                <input type="text" id="first-name" name="firstName" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
+                                       placeholder="Enter your first name">
+                                <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
+                            </div>
+                            <div>
+                                <label for="last-name" class="block text-sm font-medium text-gray-700 mb-2">Last Name *</label>
+                                <input type="text" id="last-name" name="lastName" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
+                                       placeholder="Enter your last name">
+                                <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">University Email *</label>
+                                <input type="email" id="email" name="email" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
+                                       placeholder="your.email@university.edu">
+                                <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
+                            </div>
+                            <div>
+                                <label for="phone-driver" class="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
+                                <input type="tel" id="phone-driver" name="phone" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
+                                       placeholder="Enter your phone number">
+                                <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <label for="student-id" class="block text-sm font-medium text-gray-700 mb-2">Student ID *</label>
+                            <input type="text" id="student-id" name="studentId" required 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
+                                   placeholder="Enter your student ID number">
+                            <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
+                        </div>
+                    </div>
+
+                    <!-- Vehicle Information -->
+                    <div class="border-b border-gray-200 pb-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Vehicle Information</h3>
+                        <div>
+                            <label for="vehicle-type" class="block text-sm font-medium text-gray-700 mb-2">Vehicle Type *</label>
+                            <select id="vehicle-type" name="vehicleType" required 
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300">
+                                <option value="">Select vehicle type</option>
+                                <option value="car">Car</option>
+                                <option value="suv">SUV</option>
+                                <option value="truck">Truck</option>
+                                <option value="motorcycle">Motorcycle</option>
+                                <option value="bicycle">Bicycle</option>
+                            </select>
+                            <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                            <div>
+                                <label for="make-model" class="block text-sm font-medium text-gray-700 mb-2">Make & Model *</label>
+                                <input type="text" id="make-model" name="makeModel" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
+                                       placeholder="e.g., Toyota Camry, Honda Civic">
+                                <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
+                            </div>
+                            <div>
+                                <label for="year" class="block text-sm font-medium text-gray-700 mb-2">Year *</label>
+                                <input type="number" id="year" name="year" required min="2000" max="2024"
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
+                                       placeholder="2020">
+                                <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                            <div>
+                                <label for="color" class="block text-sm font-medium text-gray-700 mb-2">Color *</label>
+                                <input type="text" id="color" name="color" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
+                                       placeholder="e.g., Blue, Red, White">
+                                <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
+                            </div>
+                            <div>
+                                <label for="license-plate" class="block text-sm font-medium text-gray-700 mb-2">License Plate *</label>
+                                <input type="text" id="license-plate" name="licensePlate" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
+                                       placeholder="ABC-1234">
+                                <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <label for="seats" class="block text-sm font-medium text-gray-700 mb-2">Available Seats for Passengers *</label>
+                            <select id="seats" name="seats" required 
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300">
+                                <option value="">Select number of seats</option>
+                                <option value="1">1 Seat</option>
+                                <option value="2">2 Seats</option>
+                                <option value="3">3 Seats</option>
+                                <option value="4">4 Seats</option>
+                                <option value="5">5+ Seats</option>
+                            </select>
+                            <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
+                        </div>
+                    </div>
+
+                    <!-- Availability -->
+                    <div class="border-b border-gray-200 pb-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Availability</h3>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-3">Days Available (Select all that apply) *</label>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="availability" value="monday" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded">
+                                    <span class="ml-2 text-sm text-gray-700">Monday</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="availability" value="tuesday" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded">
+                                    <span class="ml-2 text-sm text-gray-700">Tuesday</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="availability" value="wednesday" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded">
+                                    <span class="ml-2 text-sm text-gray-700">Wednesday</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="availability" value="thursday" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded">
+                                    <span class="ml-2 text-sm text-gray-700">Thursday</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="availability" value="friday" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded">
+                                    <span class="ml-2 text-sm text-gray-700">Friday</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="availability" value="saturday" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded">
+                                    <span class="ml-2 text-sm text-gray-700">Saturday</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="availability" value="sunday" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded">
+                                    <span class="ml-2 text-sm text-gray-700">Sunday</span>
+                                </label>
+                            </div>
+                            <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                            <div>
+                                <label for="start-time" class="block text-sm font-medium text-gray-700 mb-2">Earliest Available Time</label>
+                                <input type="time" id="start-time" name="startTime" 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300">
+                            </div>
+                            <div>
+                                <label for="end-time" class="block text-sm font-medium text-gray-700 mb-2">Latest Available Time</label>
+                                <input type="time" id="end-time" name="endTime" 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional Information -->
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Additional Information</h3>
+                        <div>
+                            <label for="experience" class="block text-sm font-medium text-gray-700 mb-2">Driving Experience (Years)</label>
+                            <select id="experience" name="experience" 
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300">
+                                <option value="">Select experience</option>
+                                <option value="1">Less than 1 year</option>
+                                <option value="2">1-2 years</option>
+                                <option value="3">3-5 years</option>
+                                <option value="5+">5+ years</option>
+                            </select>
+                        </div>
+                        <div class="mt-4">
+                            <label for="bio" class="block text-sm font-medium text-gray-700 mb-2">Tell us about yourself</label>
+                            <textarea id="bio" name="bio" rows="3" 
+                                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
+                                      placeholder="Share a bit about yourself, your interests, or anything that would help passengers feel comfortable riding with you..."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Terms and Conditions -->
+                    <div class="space-y-3">
+                        <label class="flex items-start">
+                            <input type="checkbox" id="terms-driver" name="terms" required 
+                                   class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded mt-1">
+                            <span class="ml-2 block text-sm text-gray-700">
+                                I agree to the <a href="#" class="text-primary hover:underline">Terms of Service</a> and <a href="#" class="text-primary hover:underline">Privacy Policy</a> *
+                            </span>
+                        </label>
+                        <label class="flex items-start">
+                            <input type="checkbox" id="insurance" name="insurance" required 
+                                   class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded mt-1">
+                            <span class="ml-2 block text-sm text-gray-700">
+                                I confirm that I have valid driver's license and insurance coverage *
+                            </span>
+                        </label>
+                        <label class="flex items-start">
+                            <input type="checkbox" id="background" name="background" required 
+                                   class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded mt-1">
+                            <span class="ml-2 block text-sm text-gray-700">
+                                I consent to a background check for safety verification *
+                            </span>
+                        </label>
+                    </div>
+
+                    <button type="submit" 
+                            class="w-full bg-primary hover:bg-secondary text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                        Submit Application
+                    </button>
+                </form>
+
+                <!-- Success Message -->
+                <div id="success-message-driver" class="hidden mt-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
+                    <div class="flex">
+                        <svg class="w-5 h-5 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                        <div>
+                            <h3 class="font-medium">Application Submitted Successfully!</h3>
+                            <p class="text-sm mt-1">We'll review your application and get back to you within 24-48 hours.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">CampusRide</h3>
+                    <p class="text-gray-400 mb-4">Connecting students for safe, affordable rides around campus and beyond.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="social-icon hover:scale-110 transition-transform duration-300">
+                            <img src="./assets/public/public/images/facebook_icon.png" alt="Facebook" class="w-8 h-8">
+                        </a>
+                        <a href="#" class="social-icon hover:scale-110 transition-transform duration-300">
+                            <img src="./assets/public/public/images/instagram_icon.png" alt="Instagram" class="w-8 h-8">
+                        </a>
+                        <a href="#" class="social-icon hover:scale-110 transition-transform duration-300">
+                            <img src="./assets/public/public/images/twitter_icon.png" alt="Twitter" class="w-8 h-8">
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors duration-300">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors duration-300">About Us</a></li>
+                        <li><a href="request.html" class="text-gray-400 hover:text-white transition-colors duration-300">Request Ride</a></li>
+                        <li><a href="register.html" class="text-gray-400 hover:text-white transition-colors duration-300">Become Driver</a></li>
+                        <li><a href="rides.html" class="text-gray-400 hover:text-white transition-colors duration-300">Available Rides</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+                    <p class="text-gray-400 mb-2">Email: info@campusride.com</p>
+                    <p class="text-gray-400 mb-2">Phone: +254721300904</p>
+                    <p class="text-gray-400">Available 24/7 for students</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2024 CampusRide. All rights reserved. Made with ❤️ for students.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+

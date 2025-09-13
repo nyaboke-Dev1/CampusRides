@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - CampusRide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#1e40af',
+                        accent: '#3b82f6'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Navigation Header -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-primary">CampusRide</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Home</a>
+                        <a href="about.html" class="nav-link text-primary px-3 py-2 rounded-md text-sm font-medium">About</a>
+                        <a href="request.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Request Ride</a>
+                        <a href="register.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Become Driver</a>
+                        <a href="rides.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Available Rides</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary focus:outline-none focus:text-primary">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg">
+                <a href="index.html" class="nav-link block text-gray-700 hover:text-primary px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="about.html" class="nav-link block text-primary px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="request.html" class="nav-link block text-gray-700 hover:text-primary px-3 py-2 rounded-md text-base font-medium">Request Ride</a>
+                <a href="register.html" class="nav-link block text-gray-700 hover:text-primary px-3 py-2 rounded-md text-base font-medium">Become Driver</a>
+                <a href="rides.html" class="nav-link block text-gray-700 hover:text-primary px-3 py-2 rounded-md text-base font-medium">Available Rides</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-20 pb-16 bg-gradient-to-r from-primary to-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl sm:text-5xl font-bold text-white mb-6">About CampusRide</h1>
+            <p class="text-xl text-blue-100 max-w-3xl mx-auto">Learn more about our mission to connect students and make campus transportation affordable and accessible for everyone.</p>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="prose prose-lg max-w-none">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
+                <p class="text-gray-700 mb-6 leading-relaxed">
+                    CampusRide was born from a simple idea: students helping students. As university students ourselves, we understood the daily challenges of getting around campus and the surrounding areas. Whether it's getting to class, heading to work, or going out with friends, transportation can be expensive and inconvenient.
+                </p>
+                
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 mt-12">Our Mission</h2>
+                <p class="text-gray-700 mb-6 leading-relaxed">
+                    We believe that every student deserves access to safe, affordable, and reliable transportation. Our mission is to create a community-driven platform where students can connect with each other to share rides, reduce costs, and build lasting friendships along the way.
+                </p>
+
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 mt-12">How It Works</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 my-8">
+                    <div class="text-center p-6 bg-gray-50 rounded-lg">
+                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl font-bold text-white">1</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Sign Up</h3>
+                        <p class="text-gray-600">Create your account and verify your student status with your university email.</p>
+                    </div>
+                    <div class="text-center p-6 bg-gray-50 rounded-lg">
+                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl font-bold text-white">2</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Find or Offer</h3>
+                        <p class="text-gray-600">Either request a ride to your destination or offer to drive fellow students.</p>
+                    </div>
+                    <div class="text-center p-6 bg-gray-50 rounded-lg">
+                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl font-bold text-white">3</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Connect & Ride</h3>
+                        <p class="text-gray-600">Connect with your ride match and enjoy safe, affordable transportation.</p>
+                    </div>
+                </div>
+
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 mt-12">Our Values</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
+                    <div class="p-6 border-l-4 border-primary bg-blue-50">
+                        <h3 class="text-xl font-semibold mb-2 text-primary">Safety First</h3>
+                        <p class="text-gray-700">All drivers are verified students from your university. We prioritize your safety above everything else.</p>
+                    </div>
+                    <div class="p-6 border-l-4 border-primary bg-blue-50">
+                        <h3 class="text-xl font-semibold mb-2 text-primary">Community</h3>
+                        <p class="text-gray-700">We're building more than just a ride-sharing platform - we're creating a supportive student community.</p>
+                    </div>
+                    <div class="p-6 border-l-4 border-primary bg-blue-50">
+                        <h3 class="text-xl font-semibold mb-2 text-primary">Affordability</h3>
+                        <p class="text-gray-700">Student budgets are tight. We keep costs low so everyone can afford to get where they need to go.</p>
+                    </div>
+                    <div class="p-6 border-l-4 border-primary bg-blue-50">
+                        <h3 class="text-xl font-semibold mb-2 text-primary">Sustainability</h3>
+                        <p class="text-gray-700">By sharing rides, we're reducing carbon emissions and making our campus more environmentally friendly.</p>
+                    </div>
+                </div>
+
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 mt-12">Join Our Community</h2>
+                <p class="text-gray-700 mb-6 leading-relaxed">
+                    Ready to be part of the CampusRide community? Whether you need a ride or want to help fellow students by offering rides, we welcome you to join us in making campus transportation better for everyone.
+                </p>
+                
+                <div class="text-center mt-8">
+                    <a href="register.html" class="bg-primary hover:bg-secondary text-white font-bold py-3 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl mr-4">
+                        Become a Driver
+                    </a>
+                    <a href="request.html" class="bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold py-3 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105">
+                        Request a Ride
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">CampusRide</h3>
+                    <p class="text-gray-400 mb-4">Connecting students for safe, affordable rides around campus and beyond.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="social-icon hover:scale-110 transition-transform duration-300">
+                            <img src="./assets/public/public/images/facebook_icon.png" alt="Facebook" class="w-8 h-8">
+                        </a>
+                        <a href="#" class="social-icon hover:scale-110 transition-transform duration-300">
+                            <img src="./assets/public/public/images/instagram_icon.png" alt="Instagram" class="w-8 h-8">
+                        </a>
+                        <a href="#" class="social-icon hover:scale-110 transition-transform duration-300">
+                            <img src="./assets/public/public/images/twitter_icon.png" alt="Twitter" class="w-8 h-8">
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors duration-300">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors duration-300">About Us</a></li>
+                        <li><a href="request.html" class="text-gray-400 hover:text-white transition-colors duration-300">Request Ride</a></li>
+                        <li><a href="register.html" class="text-gray-400 hover:text-white transition-colors duration-300">Become Driver</a></li>
+                        <li><a href="rides.html" class="text-gray-400 hover:text-white transition-colors duration-300">Available Rides</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+                    <p class="text-gray-400 mb-2">Email: info@campusride.com</p>
+                    <p class="text-gray-400 mb-2">Phone: +254721300904</p>
+                    <p class="text-gray-400">Available 24/7 for students</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2024 CampusRide. All rights reserved. Made with ❤️ for students.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+

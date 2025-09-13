@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request a Ride - CampusRide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#1e40af',
+                        accent: '#3b82f6'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <!-- Navigation Header -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-primary">CampusRide</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Home</a>
+                        <a href="about.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">About</a>
+                        <a href="request.html" class="nav-link text-primary px-3 py-2 rounded-md text-sm font-medium">Request Ride</a>
+                        <a href="register.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Become Driver</a>
+                        <a href="rides.html" class="nav-link text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Available Rides</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary focus:outline-none focus:text-primary">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg">
+                <a href="index.html" class="nav-link block text-gray-700 hover:text-primary px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="about.html" class="nav-link block text-gray-700 hover:text-primary px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="request.html" class="nav-link block text-primary px-3 py-2 rounded-md text-base font-medium">Request Ride</a>
+                <a href="register.html" class="nav-link block text-gray-700 hover:text-primary px-3 py-2 rounded-md text-base font-medium">Become Driver</a>
+                <a href="rides.html" class="nav-link block text-gray-700 hover:text-primary px-3 py-2 rounded-md text-base font-medium">Available Rides</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-20 pb-16 bg-gradient-to-r from-primary to-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl sm:text-5xl font-bold text-white mb-6">Request a Ride</h1>
+            <p class="text-xl text-blue-100 max-w-3xl mx-auto">Fill out the form below and we'll connect you with a fellow student driver heading your way.</p>
+        </div>
+    </section>
+
+    <!-- Request Form -->
+    <section class="py-16">
+        <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <form id="ride-request-form" class="space-y-6">
+                    <div>
+                        <label for="full-name" class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+                        <input type="text" id="full-name" name="fullName" required 
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
+                               placeholder="Enter your full name">
+                        <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
+                    </div>
+
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required 
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
+                               placeholder="Enter your phone number">
+                        <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
+                    </div>
+
+                    <div>
+                        <label for="pickup-location" class="block text-sm font-medium text-gray-700 mb-2">Pickup Location *</label>
+                        <input type="text" id="pickup-location" name="pickupLocation" required 
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
+                               placeholder="e.g., Main Library, Student Union, Dormitory Name">
+                        <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
+                    </div>
+
+                    <div>
+                        <label for="destination" class="block text-sm font-medium text-gray-700 mb-2">Destination *</label>
+                        <input type="text" id="destination" name="destination" required 
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
+                               placeholder="e.g., Downtown Mall, Airport, Train Station">
+                        <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="date" class="block text-sm font-medium text-gray-700 mb-2">Date *</label>
+                            <input type="date" id="date" name="date" required 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300">
+                            <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
+                        </div>
+                        <div>
+                            <label for="time" class="block text-sm font-medium text-gray-700 mb-2">Preferred Time *</label>
+                            <input type="time" id="time" name="time" required 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300">
+                            <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="passengers" class="block text-sm font-medium text-gray-700 mb-2">Number of Passengers</label>
+                        <select id="passengers" name="passengers" 
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300">
+                            <option value="1">1 Passenger</option>
+                            <option value="2">2 Passengers</option>
+                            <option value="3">3 Passengers</option>
+                            <option value="4">4 Passengers</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="notes" class="block text-sm font-medium text-gray-700 mb-2">Additional Notes</label>
+                        <textarea id="notes" name="notes" rows="3" 
+                                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
+                                  placeholder="Any special requirements or additional information..."></textarea>
+                    </div>
+
+                    <div class="flex items-center">
+                        <input type="checkbox" id="terms" name="terms" required 
+                               class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded">
+                        <label for="terms" class="ml-2 block text-sm text-gray-700">
+                            I agree to the <a href="#" class="text-primary hover:underline">Terms of Service</a> and <a href="#" class="text-primary hover:underline">Privacy Policy</a> *
+                        </label>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button type="submit" 
+                                class="flex-1 bg-primary hover:bg-secondary text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                            Submit Request
+                        </button>
+                        <button type="button" id="whatsapp-btn" 
+                                class="flex-1 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl" >
+                            Request via WhatsApp
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Success Message -->
+                <div id="success-message" class="hidden mt-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
+                    <div class="flex">
+                        <svg class="w-5 h-5 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                        <div>
+                            <h3 class="font-medium">Request Submitted Successfully!</h3>
+                            <p class="text-sm mt-1">We'll connect you with a driver soon. Check your phone for updates.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How It Works -->
+            <div class="mt-12 bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">How It Works</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-xl font-bold text-white">1</span>
+                        </div>
+                        <h3 class="font-semibold mb-2">Submit Request</h3>
+                        <p class="text-gray-600 text-sm">Fill out the form with your ride details and preferences.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-xl font-bold text-white">2</span>
+                        </div>
+                        <h3 class="font-semibold mb-2">Get Matched</h3>
+                        <p class="text-gray-600 text-sm">We'll find a verified student driver going your way.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-xl font-bold text-white">3</span>
+                        </div>
+                        <h3 class="font-semibold mb-2">Connect & Ride</h3>
+                        <p class="text-gray-600 text-sm">Connect with your driver and enjoy your safe, affordable ride.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">CampusRide</h3>
+                    <p class="text-gray-400 mb-4">Connecting students for safe, affordable rides around campus and beyond.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="social-icon hover:scale-110 transition-transform duration-300">
+                            <img src="./assets/public/public/images/facebook_icon.png" alt="Facebook" class="w-8 h-8">
+                        </a>
+                        <a href="#" class="social-icon hover:scale-110 transition-transform duration-300">
+                            <img src="./assets/public/public/images/instagram_icon.png" alt="Instagram" class="w-8 h-8">
+                        </a>
+                        <a href="#" class="social-icon hover:scale-110 transition-transform duration-300">
+                            <img src="./assets/public/public/images/twitter_icon.png" alt="Twitter" class="w-8 h-8">
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors duration-300">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors duration-300">About Us</a></li>
+                        <li><a href="request.html" class="text-gray-400 hover:text-white transition-colors duration-300">Request Ride</a></li>
+                        <li><a href="register.html" class="text-gray-400 hover:text-white transition-colors duration-300">Become Driver</a></li>
+                        <li><a href="rides.html" class="text-gray-400 hover:text-white transition-colors duration-300">Available Rides</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+                    <p class="text-gray-400 mb-2">Email: info@campusride.com</p>
+                    <p class="text-gray-400 mb-2">Phone: +254721300904</p>
+                    <p class="text-gray-400">Available 24/7 for students</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2024 CampusRide. All rights reserved. Made with ❤️ for students.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+
